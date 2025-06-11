@@ -11,7 +11,8 @@ declare global {
   }
 }
 
-declare const self: WorkerGlobalScope;
+// @ts-expect-error only available in service worker scope
+declare const self: ServiceWorkerGlobalScope;
 
 // Install the Serwist service worker
 const serwist = new Serwist({
