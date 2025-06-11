@@ -11,6 +11,13 @@ const withSerwist = withSerwistInit({
 
 const nextConfig: NextConfig = {
   // Other Next.js config options
+  turbopack: {
+    // Example: adding an alias and custom file extension
+    resolveAlias: {
+      underscore: 'lodash',
+    },
+    resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.json'],
+  }
 };
 
 // Wrap the nextConfig with Serwist
