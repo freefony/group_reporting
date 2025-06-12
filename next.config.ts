@@ -6,7 +6,7 @@ const withSerwist = withSerwistInit({
   // Your Serwist configuration
   swSrc: 'app/sw.ts',
   swDest: 'public/sw.js',
-  disable: process.env.NODE_ENV === 'development',
+  disable: process.env.NODE_ENV !== 'production',
 });
 
 const nextConfig: NextConfig = {
