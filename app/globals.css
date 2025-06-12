@@ -1,8 +1,10 @@
 @import 'tailwindcss';
 @plugin 'daisyui' {
   themes:
-    light --default,
-    dark --prefersdark;
+    nord --default,
+    abyss --prefersdark,
+    cupcake,
+    dracula;
   root: ':root';
   include:;
   exclude:;
@@ -11,7 +13,7 @@
 }
 
 :root {
-  --background: #ffffff;
+  --background: #efefef;
   --foreground: #171717;
 }
 

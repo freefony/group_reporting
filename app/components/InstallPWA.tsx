@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { IconPlus } from './Icons';
 
 // Define the BeforeInstallPromptEvent interface
 interface BeforeInstallPromptEvent extends Event {
@@ -40,13 +41,13 @@ export default function InstallPWA() {
     if (!promptInstall) {
       return;
     }
-    
+
     // Show the installation prompt
     promptInstall.prompt();
-    
+
     // Wait for the user to respond to the prompt
     const { outcome } = await promptInstall.userChoice;
-    
+
     // Hide the button if installed
     if (outcome === 'accepted') {
       setSupportsPWA(false);
@@ -63,20 +64,7 @@ export default function InstallPWA() {
         className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg flex items-center space-x-2"
         onClick={handleClick}
       >
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="h-5 w-5" 
-          fill="none" 
-          viewBox="0 0 24 24" 
-          stroke="currentColor"
-        >
-          <path 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            strokeWidth={2} 
-            d="M12 4v16m8-8H4" 
-          />
-        </svg>
+        <IconPlus />
         <span>Install App</span>
       </button>
     </div>
